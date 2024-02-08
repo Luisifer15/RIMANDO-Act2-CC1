@@ -1,0 +1,71 @@
+﻿@model List<ToDo>
+
+
+<html>
+    <head>
+        <title>
+            Todo Page
+        </title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            /*.loading {
+                background-image: url('loading.gif');
+                background-size: cover;
+                width: 100px;
+                height: 100px;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }*/
+
+           table{
+               animation: 1s ease-out 0s 1 slideInLeft;
+
+           }
+
+
+
+        </style>
+    </head>
+    <body>
+
+        <div id="loader-wrapper">
+            <div id="loader"></div>
+
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+
+        </div>
+
+
+
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Item</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var todo in Model)
+                {
+                    <tr scope="row">
+                            <td>@todo.ItemID</td>
+                            <td>@todo.Item</td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </body>
+</html>
+
+@*<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+    $(window).on('load', function () {
+        $(".loading").fadeOut("slow");
+    });
+</script>*@

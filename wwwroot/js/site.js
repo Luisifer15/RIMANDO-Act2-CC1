@@ -2,3 +2,22 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+
+$(document).ready(function () {
+    setTimeout(function () {
+        $('.wrapper').addClass('loaded');
+
+    }, 3000);
+});
+
+
+
+jQuery(function () {
+
+    $(window).load(function () {
+
+        $('.wrapper').removeClass('preload');
+
+    });
+
+});
